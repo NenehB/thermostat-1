@@ -11,7 +11,7 @@ class Thermostat {
   }
 
   temperatureUp(number){
-    return this.startTemp + number;
+    return this.startTemp += number;
   }
 
   temperatureDown(number) { 
@@ -19,7 +19,7 @@ class Thermostat {
       return this.minTemp;
     }
     else {
-      return this.startTemp - number;
+      return this.startTemp -= number;
     }
   }
 
@@ -33,5 +33,17 @@ class Thermostat {
 
   reset(){
     return this.startTemp;
+  }
+
+  usage(){
+    if (this.startTemp < 18 ) {
+      return 'low-usage'
+    }
+    else if (this.startTemp <= 25){
+      return 'Medium-usage';
+    }
+    else {
+      return 'high-usage';
+    }
   }
 }

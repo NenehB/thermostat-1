@@ -39,6 +39,19 @@ describe ('Thermostat',function(){
     it('reset the temperature', function(){
       expect(thermostat.reset()).toEqual(20)
     });
+
+    it('medium usage', function(){
+      console.log('medium-usage <=25', thermostat.usage());
+      expect(thermostat.usage()).toEqual('Medium-usage')
+    });
+    it('low usage', function(){
+      thermostat.temperatureDown(5)
+      expect(thermostat.usage()).toEqual('low-usage')
+    });
+    it('high usage', function(){
+      thermostat.temperatureUp(6)
+      expect(thermostat.usage()).toEqual('high-usage')
+    });
 });
 
 
