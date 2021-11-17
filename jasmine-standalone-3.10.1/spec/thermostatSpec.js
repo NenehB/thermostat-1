@@ -1,27 +1,28 @@
 describe ('Thermostat',function(){
   
-  describe ('Thermostat',function(){
+  beforeEach(function(){
+    thermostat = new Thermostat();
+  });
+
     it('Starts at 20 degrees', function(){
-      thermostat = new Thermostat();
       expect(thermostat.temperature()).toEqual(20)
     });
-  }); 
 
-  describe ('Thermostat',function(){
     it('increase the temperature up', function(){
-      thermostat = new Thermostat();
       expect(thermostat.temperatureUp(5)).toEqual(25)
     });
-  }); 
 
-  describe ('Thermostat',function(){
     it('decrease the temperature', function(){
-      thermostat = new Thermostat();
       expect(thermostat.temperatureDown(10)).toEqual(10)
     });
-  }); 
 
+    it('has a minimum temp of 10', function(){
+      expect(thermostat.minTemp).toEqual(10)
+    });
 
+    it('doesnt allow the temp to go below the minimum', function(){
+      expect(thermostat.temperatureDown(20)).toEqual(10)
+    });
 });
 
 
