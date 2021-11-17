@@ -31,6 +31,10 @@ describe ('Thermostat',function(){
     it('on power saving mode off, max temp 32 deg', function(){
       expect(thermostat.powerSavingModeOff()).toEqual(32)
     });
+
+    it('power saving mode is on by default', function(){
+      expect(thermostat.MaxTemp).toEqual(25)
+    });
 });
 
 

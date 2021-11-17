@@ -3,6 +3,7 @@ class Thermostat {
     this.startTemp = 20; 
     this.minTemp = 10;
     this.MaxTemp = 0; 
+    this.powerSavingModeOn();
   }
 
   temperature(){
