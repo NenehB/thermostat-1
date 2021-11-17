@@ -30,4 +30,8 @@ class Thermostat {
   powerSavingModeOff(){
     return this.MaxTemp = 32;
   }
+
+  reset(){
+    return this.startTemp;
+  }
 }
