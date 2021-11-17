@@ -14,6 +14,14 @@ describe ('Thermostat',function(){
     });
   }); 
 
+  describe ('Thermostat',function(){
+    it('decrease the temperature', function(){
+      thermostat = new Thermostat();
+      expect(thermostat.temperatureDown(10)).toEqual(10)
+    });
+  }); 
+
+
 });
 
 
