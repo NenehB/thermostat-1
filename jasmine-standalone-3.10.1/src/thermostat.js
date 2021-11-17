@@ -4,7 +4,7 @@ class Thermostat {
     
   }
 
-temperature(){
-  return this.startTemp;
-}
+  temperature(){
+    return this.startTemp;
+  }
 }
