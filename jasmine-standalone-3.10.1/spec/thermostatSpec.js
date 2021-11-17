@@ -23,6 +23,14 @@ describe ('Thermostat',function(){
     it('doesnt allow the temp to go below the minimum', function(){
       expect(thermostat.temperatureDown(20)).toEqual(10)
     });
+
+    it('on power saving mode, max temp 25 deg', function(){
+      expect(thermostat.powerSavingModeOn()).toEqual(25)
+    });
+
+    it('on power saving mode off, max temp 32 deg', function(){
+      expect(thermostat.powerSavingModeOff()).toEqual(32)
+    });
 });
 
 
