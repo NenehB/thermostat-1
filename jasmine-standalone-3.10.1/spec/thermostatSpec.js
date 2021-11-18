@@ -9,11 +9,15 @@ describe ('Thermostat',function(){
     });
 
     it('increase the temperature up', function(){
-      expect(thermostat.temperatureUp(5)).toEqual(25)
+      thermostat.temperatureUp();
+      thermostat.temperatureUp();
+      expect(thermostat.temperature()).toEqual(22)
     });
 
     it('decrease the temperature', function(){
-      expect(thermostat.temperatureDown(10)).toEqual(10)
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      expect(thermostat.temperature()).toEqual(18)
     });
 
     it('has a minimum temp of 10', function(){
@@ -21,7 +25,18 @@ describe ('Thermostat',function(){
     });
 
     it('doesnt allow the temp to go below the minimum', function(){
-      expect(thermostat.temperatureDown(20)).toEqual(10)
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      thermostat.temperatureDown();
+      expect(thermostat.temperatureDown()).toEqual(10)
     });
 
     it('on power saving mode, max temp 25 deg', function(){
@@ -41,15 +56,21 @@ describe ('Thermostat',function(){
     });
 
     it('medium usage', function(){
-      console.log('medium-usage <=25', thermostat.usage());
       expect(thermostat.usage()).toEqual('Medium-usage')
     });
     it('low usage', function(){
-      thermostat.temperatureDown(5)
+      thermostat.temperatureDown()
+      thermostat.temperatureDown()
+      thermostat.temperatureDown()
       expect(thermostat.usage()).toEqual('low-usage')
     });
     it('high usage', function(){
-      thermostat.temperatureUp(6)
+      thermostat.temperatureUp()
+      thermostat.temperatureUp()
+      thermostat.temperatureUp()
+      thermostat.temperatureUp()
+      thermostat.temperatureUp()
+      thermostat.temperatureUp()
       expect(thermostat.usage()).toEqual('high-usage')
     });
 });
