@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   document.querySelector('#temperature-reset').addEventListener('click', () => { 
-    thermostat.reset();
-    document.querySelector('#temperature').innerText = thermostat.temperature(); 
+    document.querySelector('#temperature').innerText = thermostat.reset();; 
   })
 
 })

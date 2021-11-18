@@ -32,7 +32,7 @@ class Thermostat {
   }
 
   reset(){
-    return this.startTemp;
+    return 20;
   }
 
   usage(){
@@ -47,3 +47,8 @@ class Thermostat {
     }
   }
 }
+const thermostat = new Thermostat();
+console.log(thermostat.temperatureUp());
+console.log(thermostat.temperatureUp());
+console.log(thermostat.temperatureUp());
+console.log(thermostat.reset());
