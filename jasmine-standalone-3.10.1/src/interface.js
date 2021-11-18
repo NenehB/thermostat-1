@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const city = document.querySelector('#city_selector').value; 
   
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2edcbd57aa7afc6b0e656e79983262e6&units=metric`).then((response) => {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}`).then((response) => {
     return response.json()
       })
     .then((data) => {
