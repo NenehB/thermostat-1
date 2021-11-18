@@ -10,16 +10,16 @@ class Thermostat {
     return this.startTemp;
   }
 
-  temperatureUp(number){
-    return this.startTemp += number;
+  temperatureUp(){
+    return this.startTemp += 1;
   }
 
-  temperatureDown(number) { 
-    if ((this.startTemp - number) < this.minTemp){
+  temperatureDown() { 
+    if ((this.startTemp - 1) < this.minTemp){
       return this.minTemp;
     }
     else {
-      return this.startTemp -= number;
+      return this.startTemp -= 1;
     }
   }
 
